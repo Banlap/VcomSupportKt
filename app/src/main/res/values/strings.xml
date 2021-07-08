@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">智控终端</string>
+    <string name="rule_password_lowercase">1234567890abcdefghijklmnopqrstuvwxyz</string>
+</resources>

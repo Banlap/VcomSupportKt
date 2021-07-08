@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.banlap.vcomsupportkt.uivm.LoginVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red_db">
+
+        <RelativeLayout
+            android:id="@+id/rl_title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@color/red_db"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/shape_button_white"
+            app:layout_constraintTop_toBottomOf="@+id/rl_title_bar"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="智控终端"
+                android:textSize="@dimen/size_30"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/iv_vcom_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0.02" />
+
+            <ImageView
+                android:id="@+id/iv_vcom_logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_app_logo_3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0.25"
+                />
+
+            <EditText
+                android:id="@+id/et_account"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                android:background="@drawable/shape_switch_bg_gray_f6"
+                android:hint="请输入账号"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:digits="@string/rule_password_lowercase"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/size_17"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent=".075"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/cl_background"
+                app:layout_constraintEnd_toEndOf="@+id/cl_background"
+                app:layout_constraintTop_toBottomOf="@+id/tv_app_title"
+                app:layout_constraintBottom_toBottomOf="@+id/cl_background"
+                app:layout_constraintVertical_bias="0.05"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent=".7" />
+
+            <EditText
+                android:id="@+id/et_passwords"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                android:background="@drawable/shape_switch_bg_gray_f6"
+                android:hint="请输入密码"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:digits="@string/rule_password_lowercase"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/size_17"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent=".075"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/cl_background"
+                app:layout_constraintEnd_toEndOf="@+id/cl_background"
+                app:layout_constraintTop_toBottomOf="@+id/et_account"
+                app:layout_constraintBottom_toBottomOf="@+id/cl_background"
+                app:layout_constraintVertical_bias="0.05"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent=".7" />
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:onClick="@{()->vm.viewLogin()}"
+                android:background="@drawable/shape_radius_red_db"
+                app:layout_constraintWidth_percent=".5"
+                app:layout_constraintHeight_percent=".075"
+                app:layout_constraintStart_toStartOf="@+id/cl_background"
+                app:layout_constraintEnd_toEndOf="@+id/cl_background"
+                app:layout_constraintTop_toBottomOf="@+id/et_passwords"
+                app:layout_constraintBottom_toBottomOf="@+id/cl_background"
+                app:layout_constraintVertical_bias="0.05"
+                app:layout_constraintHorizontal_bias="0.5" />
+
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_switch_bg_gray_f6_stroke"
+                android:indeterminateDrawable="@drawable/rotate_loading"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
